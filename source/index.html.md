@@ -36,12 +36,116 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 You must replace <code>YOUR_EMAIL</code> with your email.
 </aside>
 
+## Sign in
+
+```shell
+curl "http://abm2.listenloop.com/users/sign_in"
+  -X POST
+  -H "X-User-Token: YOUR_API_KEY"
+  -H "X-User-Email: YOUR_EMAIL"
+  -H "Accept: application/json"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": 1,
+  "email": "email@example.com",
+  "authentication_token": "YOUR_API_KEY",
+  "first_name": "",
+  "last_name": "",
+  "organization_id": 1,
+  "creator": true,
+  "reset_password_token": null,
+  "reset_password_sent_at": null,
+  "remember_created_at": null,
+  "sign_in_count": 2,
+  "current_sign_in_at": "2018-04-18T04:28:36.058-04:00",
+  "last_sign_in_at": "2018-04-18T04:28:09.068-04:00",
+  "current_sign_in_ip": {
+    "family": 2,
+    "addr": 2130706433,
+    "mask_addr": 4294967295
+  },
+  "last_sign_in_ip": {
+    "family": 2,
+    "addr": 2130706433,
+    "mask_addr": 4294967295
+  },
+  "created_at": "2018-04-18T04:28:09.062-04:00",
+  "updated_at": "2018-04-18T04:28:36.062-04:00",
+  "organization": {
+    "id": 1,
+    "user_defined_status": "active",
+    "last_paused_at": null,
+    "worthy_of_dsp": false,
+    "worthy_of_dsp_description": null,
+    "credits": "0.0",
+    "charge_software_fee": false,
+    "last_started_processing_at": null,
+    "last_successfully_processed_at": null,
+    "campaigns_count": null,
+    "team_members_count": null,
+    "payment_method": null,
+    "auto_refill": true,
+    "created_at": "2018-04-18T04:28:08.932-04:00",
+    "updated_at": "2018-04-18T04:28:08.932-04:00",
+    "last_archived_at": null,
+    "public_key": "PUBLIC_KEY",
+    "ip_lookup_credits_allotted": 500,
+    "ip_lookup_credits_used": 0,
+    "update_bw_blocked_domain_list": true,
+    "trial_days": 14,
+    "next_charge_date": "2018-05-02T00:00:00.000-04:00",
+    "last_charged_at_date": null,
+    "fee_per_account": null,
+    "ctc_enabled": false,
+    "loop_js_added": false,
+    "rate_limiting": { "page_view": 100 },
+    "min_charge_amount": "500.0",
+    "creator_email": "email@example.com",
+    "logo_url": null,
+    "name": null,
+    "domain": null,
+    "organization_basics": [],
+    "users": [
+      {
+        "id": 1,
+        "email": "email@example.com",
+        "last_sign_in_at": "2018-04-18T04:28:09.068-04:00",
+        "creator": true
+      }
+    ],
+    "campaigns": [],
+    "payment_information": null,
+    "salesforce": null,
+    "payment_transactions": [],
+    "lastSavedWizardProgress": {
+      "status": true,
+      "exception": null,
+      "message": null,
+      "data": {},
+      "errors": []
+    },
+    "organization_brand_safety_segments": [],
+    "beeswax_advertiser": null
+  }
+}
+```
+
+This endpoint shows you user info.
+
+### HTTP Request
+
+`POST http://abm2.listenloop.com/users/sign_in`
+
 # Campaigns
 
 ## Create
 
 ```shell
-curl "http://v2.listenloop.com/campaigns"
+curl "http://abm2.listenloop.com/campaigns"
   -X POST
   -H "X-User-Token: YOUR_API_KEY"
   -H "X-User-Email: YOUR_EMAIL"
@@ -160,7 +264,7 @@ This endpoint creates campaign.
 
 ### HTTP Request
 
-`POST http://v2.listenloop.com/campaigns`
+`POST http://abm2.listenloop.com/campaigns`
 
 ### Query Parameters
 
@@ -193,7 +297,7 @@ This endpoint creates campaign.
 ## Edit Campaign
 
 ```shell
-curl "http://v2.listenloop.com/campaigns/1"
+curl "http://abm2.listenloop.com/campaigns/1"
   -X PUT
   -H "X-User-Token: YOUR_API_KEY"
   -H "X-User-Email: YOUR_EMAIL"
@@ -277,7 +381,7 @@ This endpoint edits a specific campaign.
 
 ### HTTP Request
 
-`PUT http://v2.listenloop.com/campaigns/<ID>`
+`PUT http://abm2.listenloop.com/campaigns/<ID>`
 
 ### URL Parameters
 
@@ -316,7 +420,7 @@ This endpoint edits a specific campaign.
 ## Show Campaign
 
 ```shell
-curl "http://v2.listenloop.com/campaigns/1"
+curl "http://abm2.listenloop.com/campaigns/1"
   -H "X-User-Token: YOUR_API_KEY"
   -H "X-User-Email: YOUR_EMAIL"
 ```
@@ -397,7 +501,7 @@ This endpoint retrieves a specific campaign.
 
 ### HTTP Request
 
-`GET http://v2.listenloop.com/campaigns/<ID>`
+`GET http://abm2.listenloop.com/campaigns/<ID>`
 
 ### URL Parameters
 
@@ -410,7 +514,7 @@ This endpoint retrieves a specific campaign.
 ## Add List
 
 ```shell
-curl "http://v2.listenloop.com/campaigns/1/accounts/add_list"
+curl "http://abm2.listenloop.com/campaigns/1/accounts/add_list"
   -X POST
   -H "X-User-Token: YOUR_API_KEY"
   -H "X-User-Email: YOUR_EMAIL"
@@ -422,7 +526,7 @@ This endpoint adds lits of accounts.
 
 ### HTTP Request
 
-`POST http://v2.listenloop.com/campaigns/<ID>/accounts/add_list`
+`POST http://abm2.listenloop.com/campaigns/<ID>/accounts/add_list`
 
 ### URL Parameters
 
@@ -452,7 +556,7 @@ This endpoint adds lits of accounts.
 ## Create
 
 ```shell
-curl "http://v2.listenloop.com/campaigns/1/accounts"
+curl "http://abm2.listenloop.com/campaigns/1/accounts"
   -X POST
   -H "X-User-Token: YOUR_API_KEY"
   -H "X-User-Email: YOUR_EMAIL"
@@ -498,7 +602,7 @@ This endpoint creates account.
 
 ### HTTP Request
 
-`POST http://v2.listenloop.com/campaigns/<ID>/accounts`
+`POST http://abm2.listenloop.com/campaigns/<ID>/accounts`
 
 ### URL Parameters
 
@@ -523,7 +627,7 @@ This endpoint creates account.
 ## Edit
 
 ```shell
-curl "http://v2.listenloop.com/campaigns/1/accounts/1"
+curl "http://abm2.listenloop.com/campaigns/1/accounts/1"
   -X PUT
   -H "X-User-Token: YOUR_API_KEY"
   -H "X-User-Email: YOUR_EMAIL"
@@ -569,7 +673,7 @@ This endpoint edits account.
 
 ### HTTP Request
 
-`PUT http://v2.listenloop.com/campaigns/<CID>/accounts/<ID>`
+`PUT http://abm2.listenloop.com/campaigns/<CID>/accounts/<ID>`
 
 ### URL Parameters
 
@@ -595,7 +699,7 @@ This endpoint edits account.
 ## Show
 
 ```shell
-curl "http://v2.listenloop.com/campaigns/1/accounts/1"
+curl "http://abm2.listenloop.com/campaigns/1/accounts/1"
   -H "X-User-Token: YOUR_API_KEY"
   -H "X-User-Email: YOUR_EMAIL"
 ```
@@ -638,7 +742,7 @@ This endpoint retrieves a specific account.
 
 ### HTTP Request
 
-`GET http://v2.listenloop.com/campaigns/<CID>/accounts/<ID>`
+`GET http://abm2.listenloop.com/campaigns/<CID>/accounts/<ID>`
 
 ### URL Parameters
 
