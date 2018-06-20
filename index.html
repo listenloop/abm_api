@@ -1,0 +1,1244 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+    <link href="images/favicon.ico" rel="icon" type="image/ico" />
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="authentication">Authentication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#sign-in" class="toc-h2 toc-link" data-title="sign-in">Sign in</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#campaigns" class="toc-h1 toc-link" data-title="campaigns">Campaigns</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create" class="toc-h2 toc-link" data-title="create">Create</a>
+                  </li>
+                  <li>
+                    <a href="#edit-campaign" class="toc-h2 toc-link" data-title="edit-campaign">Edit Campaign</a>
+                  </li>
+                  <li>
+                    <a href="#show-campaign" class="toc-h2 toc-link" data-title="show-campaign">Show Campaign</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#accounts" class="toc-h1 toc-link" data-title="accounts">Accounts</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#add-list" class="toc-h2 toc-link" data-title="add-list">Add List</a>
+                  </li>
+                  <li>
+                    <a href="#create-2" class="toc-h2 toc-link" data-title="create">Create</a>
+                  </li>
+                  <li>
+                    <a href="#edit" class="toc-h2 toc-link" data-title="edit">Edit</a>
+                  </li>
+                  <li>
+                    <a href="#show" class="toc-h2 toc-link" data-title="show">Show</a>
+                  </li>
+              </ul>
+          </li>
+      </div>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the ListenLoop API! You can use our API to access ListenLoop API endpoints.</p>
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl <span class="s2">"api_endpoint_here"</span>
+  -H <span class="s2">"X-User-Token: YOUR_API_KEY"</span>
+  -H <span class="s2">"X-User-Email: YOUR_EMAIL"</span>
+</code></pre>
+<blockquote>
+<p>Make sure to replace <code>YOUR_API_KEY</code> and <code>YOUR_EMAIL</code> with your API key &amp; email accordingly.</p>
+</blockquote>
+
+<p>ListenLoop uses API keys to allow access to the API. You can get your API key at your <a href="http://v2.listenloop.com/#/organization">organization page</a>.</p>
+
+<p>ListenLoop expects for the API key and email to be included in all API requests to the server in a header that looks like the following:</p>
+
+<p><code>X-User-Token: YOUR_API_KEY</code></p>
+
+<p><code>X-User-Email: YOUR_EMAIL</code></p>
+
+<aside class="notice">
+You must replace <code>YOUR_API_KEY</code> with your personal API key.
+</aside>
+
+<aside class="notice">
+You must replace <code>YOUR_EMAIL</code> with your email.
+</aside>
+<h2 id='sign-in'>Sign in</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://abm2.listenloop.com/users/sign_in"</span>
+  -X POST
+  -H <span class="s2">"X-User-Token: YOUR_API_KEY"</span>
+  -H <span class="s2">"X-User-Email: YOUR_EMAIL"</span>
+  -H <span class="s2">"Accept: application/json"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"authentication_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YOUR_API_KEY"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"organization_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"creator"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reset_password_token"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reset_password_sent_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"remember_created_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sign_in_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"current_sign_in_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-18T04:28:36.058-04:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_sign_in_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-18T04:28:09.068-04:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"current_sign_in_ip"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"family"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"addr"</span><span class="p">:</span><span class="w"> </span><span class="mi">2130706433</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mask_addr"</span><span class="p">:</span><span class="w"> </span><span class="mi">4294967295</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"last_sign_in_ip"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"family"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"addr"</span><span class="p">:</span><span class="w"> </span><span class="mi">2130706433</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mask_addr"</span><span class="p">:</span><span class="w"> </span><span class="mi">4294967295</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-18T04:28:09.062-04:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-18T04:28:36.062-04:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"organization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user_defined_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_paused_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"worthy_of_dsp"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"worthy_of_dsp_description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"credits"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"charge_software_fee"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_started_processing_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_successfully_processed_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"campaigns_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"team_members_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"auto_refill"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-18T04:28:08.932-04:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-18T04:28:08.932-04:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_archived_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"public_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PUBLIC_KEY"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ip_lookup_credits_allotted"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ip_lookup_credits_used"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"update_bw_blocked_domain_list"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"trial_days"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"next_charge_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-02T00:00:00.000-04:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_charged_at_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fee_per_account"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ctc_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"loop_js_added"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rate_limiting"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"page_view"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"min_charge_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"creator_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@example.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"logo_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"organization_basics"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_sign_in_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-18T04:28:09.068-04:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"campaigns"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"payment_information"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"salesforce"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"payment_transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"lastSavedWizardProgress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"exception"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"organization_brand_safety_segments"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"beeswax_advertiser"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint shows you user info.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST http://abm2.listenloop.com/users/sign_in</code></p>
+<h1 id='campaigns'>Campaigns</h1><h2 id='create'>Create</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://abm2.listenloop.com/campaigns"</span>
+  -X POST
+  -H <span class="s2">"X-User-Token: YOUR_API_KEY"</span>
+  -H <span class="s2">"X-User-Email: YOUR_EMAIL"</span>
+  -H <span class="s2">"Content-Type: application/json"</span>
+  -d <span class="s1">'{ "campaign": { "name": "My Awesome Campaign"}}'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Awesome Campaign"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"organization_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user_defined_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"worthy_of_dsp"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"worthy_of_dsp_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No destination Url"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"destination_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accounts_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accounts_with_impression_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_user_stopped_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"daily_budget"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"bw_lifetime_budget"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user_defined_aggressiveness"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user_defined_cpm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-06-20T06:57:50.906-04:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-06-20T06:57:50.906-04:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"frequency_cap_impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"frequency_cap_duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">3600</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"billing_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"monthly_recurring"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"worthy_of_wpe"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"worthy_of_wpe_description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"wizard_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ctc_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"targeting_strategy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"geo"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"industries"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"job_titles"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"bidding_strategy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPM"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"pacing"</span><span class="p">:</span><span class="w"> </span><span class="s2">"daily"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ecpc_target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.02"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"max_bid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.02"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"clicks_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"impressions_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"turned_on_accounts_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"page_views_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"personalization_c_page_views_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"conversion_c_page_views_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"conversion_rate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"salesforce_lists"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"organization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"campaigns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"job_titles"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"personalization_criteria"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"conversion_criteria"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"inventories"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"geo_optimizations"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"day_partings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">27</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sunday"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"from_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"to_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"monday"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"from_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"to_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tuesday"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"from_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"to_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wednesday"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"from_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"to_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"thursday"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"from_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"to_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"friday"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"from_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"to_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"saturday"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"from_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"to_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"device_types"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"carriers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"targetable_accounts_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates campaign.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST http://abm2.listenloop.com/campaigns</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>campaign</td>
+<td></td>
+<td>Contains campaign attributes.</td>
+</tr>
+</tbody></table>
+<h3 id='campaign-attributes'>Campaign Attributes</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td></td>
+<td>Campaign name.</td>
+</tr>
+<tr>
+<td>user_defined_status</td>
+<td>active</td>
+<td>Campaign status. Choices: &quot;active&quot;, &quot;paused&quot;, &quot;archived&quot;.</td>
+</tr>
+<tr>
+<td>destination_url</td>
+<td></td>
+<td>Destination URL for people who click your ad.</td>
+</tr>
+<tr>
+<td>daily_budget</td>
+<td>15.0</td>
+<td>Daily max spend budget.</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td></td>
+<td>Start campaing date.</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td></td>
+<td>End campaign date.</td>
+</tr>
+<tr>
+<td>ctc_enabled</td>
+<td></td>
+<td>Is Clickers to Contacts feature enabled.</td>
+</tr>
+<tr>
+<td>bw_lifetime_budget</td>
+<td>10000.0</td>
+<td>Campaign entire life budget.</td>
+</tr>
+<tr>
+<td>user_defined_cpm</td>
+<td>25.0</td>
+<td>Campaign CPM bid.</td>
+</tr>
+<tr>
+<td>bidding_strategy</td>
+<td>CPM</td>
+<td>Campaign bidding strategy. Choices: &quot;CPM&quot;, &quot;CPM_PACED&quot;, &quot;CPM_OPTIMIZED&quot;, &quot;CPC&quot;.</td>
+</tr>
+<tr>
+<td>pacing</td>
+<td>daily</td>
+<td>Campaign pacing type. Choices: &quot;daily&quot;, &quot;lifetime&quot;.</td>
+</tr>
+<tr>
+<td>ecpc_target</td>
+<td>0.02</td>
+<td>Campaign eCPC target.</td>
+</tr>
+<tr>
+<td>max_bid</td>
+<td>0.02</td>
+<td>Campaign max CPM bid.</td>
+</tr>
+<tr>
+<td>frequency_cap_impressions</td>
+<td>20</td>
+<td>Campaign frequency cap.</td>
+</tr>
+<tr>
+<td>frequency_cap_duration</td>
+<td>3600</td>
+<td>Campaign frequency cap duration.</td>
+</tr>
+<tr>
+<td>user_defined_aggressiveness</td>
+<td></td>
+<td>Campaign aggressiveness.</td>
+</tr>
+<tr>
+<td>targeting_strategy</td>
+<td></td>
+<td>JSON object with attributes &quot;industries&quot;, &quot;job_titles&quot;, &quot;ip_addresses&quot; , &quot;geo&quot;. Mark necessary attributes as &#39;true&#39;</td>
+</tr>
+</tbody></table>
+<h2 id='edit-campaign'>Edit Campaign</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://abm2.listenloop.com/campaigns/1"</span>
+  -X PUT
+  -H <span class="s2">"X-User-Token: YOUR_API_KEY"</span>
+  -H <span class="s2">"X-User-Email: YOUR_EMAIL"</span>
+  -H <span class="s2">"Content-Type: application/json"</span>
+  -d <span class="s1">'{ "campaign": { "destination_url": "listenloop.com"}}'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"organization_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"destination_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://listenloop.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"worthy_of_dsp"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user_defined_aggressiveness"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"daily_budget"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"pacing"</span><span class="p">:</span><span class="w"> </span><span class="s2">"daily"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"bidding_strategy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPM"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"worthy_of_dsp_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"API_CAMPAIGN"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user_defined_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accounts_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accounts_with_impression_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_user_stopped_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"bw_lifetime_budget"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user_defined_cpm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-06-20T06:57:50.906-04:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-06-20T09:12:00.966-04:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"frequency_cap_impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"frequency_cap_duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">3600</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"billing_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"monthly_recurring"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"worthy_of_wpe"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"worthy_of_wpe_description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"wizard_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ctc_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"targeting_strategy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"geo"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"industries"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"job_titles"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"ecpc_target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.02"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"max_bid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.02"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"clicks_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"impressions_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"turned_on_accounts_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"page_views_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"personalization_c_page_views_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"conversion_c_page_views_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"conversion_rate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"salesforce_lists"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"organization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"campaigns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"job_titles"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"personalization_criteria"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"conversion_criteria"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"inventories"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"geo_optimizations"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"day_partings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">27</span><span class="p">,</span><span class="w"> </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sunday"</span><span class="p">,</span><span class="w"> </span><span class="s2">"from_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s2">"to_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w"> </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"monday"</span><span class="p">,</span><span class="w"> </span><span class="s2">"from_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s2">"to_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w"> </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tuesday"</span><span class="p">,</span><span class="w"> </span><span class="s2">"from_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s2">"to_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wednesday"</span><span class="p">,</span><span class="w"> </span><span class="s2">"from_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s2">"to_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w"> </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"thursday"</span><span class="p">,</span><span class="w"> </span><span class="s2">"from_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s2">"to_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"friday"</span><span class="p">,</span><span class="w"> </span><span class="s2">"from_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s2">"to_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"saturday"</span><span class="p">,</span><span class="w"> </span><span class="s2">"from_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s2">"to_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"device_types"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"carriers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"targetable_accounts_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint edits a specific campaign.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>PUT http://abm2.listenloop.com/campaigns/&lt;ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the campaign to update</td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>campaign</td>
+<td></td>
+<td>Contains campaign attributes.</td>
+</tr>
+</tbody></table>
+<h3 id='campaign-attributes-2'>Campaign Attributes</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td></td>
+<td>Campaign name.</td>
+</tr>
+<tr>
+<td>user_defined_status</td>
+<td>active</td>
+<td>Campaign status. Choices: &quot;active&quot;, &quot;paused&quot;, &quot;archived&quot;.</td>
+</tr>
+<tr>
+<td>destination_url</td>
+<td></td>
+<td>Destination URL for people who click your ad.</td>
+</tr>
+<tr>
+<td>daily_budget</td>
+<td>15.0</td>
+<td>Daily max spend budget.</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td></td>
+<td>Start campaing date.</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td></td>
+<td>End campaign date.</td>
+</tr>
+<tr>
+<td>ctc_enabled</td>
+<td></td>
+<td>Is Clickers to Contacts feature enabled.</td>
+</tr>
+<tr>
+<td>bw_lifetime_budget</td>
+<td>10000.0</td>
+<td>Campaign entire life budget.</td>
+</tr>
+<tr>
+<td>user_defined_cpm</td>
+<td>25.0</td>
+<td>Campaign CPM bid.</td>
+</tr>
+<tr>
+<td>bidding_strategy</td>
+<td>CPM</td>
+<td>Campaign bidding strategy. Choices: &quot;CPM&quot;, &quot;CPM_PACED&quot;, &quot;CPM_OPTIMIZED&quot;, &quot;CPC&quot;.</td>
+</tr>
+<tr>
+<td>pacing</td>
+<td>daily</td>
+<td>Campaign pacing type. Choices: &quot;daily&quot;, &quot;lifetime&quot;.</td>
+</tr>
+<tr>
+<td>ecpc_target</td>
+<td>0.02</td>
+<td>Campaign eCPC target.</td>
+</tr>
+<tr>
+<td>max_bid</td>
+<td>0.02</td>
+<td>Campaign max CPM bid.</td>
+</tr>
+<tr>
+<td>frequency_cap_impressions</td>
+<td>20</td>
+<td>Campaign frequency cap.</td>
+</tr>
+<tr>
+<td>frequency_cap_duration</td>
+<td>3600</td>
+<td>Campaign frequency cap duration.</td>
+</tr>
+<tr>
+<td>user_defined_aggressiveness</td>
+<td></td>
+<td>Campaign aggressiveness.</td>
+</tr>
+<tr>
+<td>targeting_strategy</td>
+<td></td>
+<td>JSON object with attributes &quot;industries&quot;, &quot;job_titles&quot;, &quot;ip_addresses&quot; , &quot;geo&quot;. Mark necessary attributes as &#39;true&#39;</td>
+</tr>
+</tbody></table>
+<h2 id='show-campaign'>Show Campaign</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://abm2.listenloop.com/campaigns/1"</span>
+  -H <span class="s2">"X-User-Token: YOUR_API_KEY"</span>
+  -H <span class="s2">"X-User-Email: YOUR_EMAIL"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"organization_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"destination_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://listenloop.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"worthy_of_dsp"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user_defined_aggressiveness"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"daily_budget"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"pacing"</span><span class="p">:</span><span class="w"> </span><span class="s2">"daily"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"bidding_strategy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPM"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"worthy_of_dsp_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"API_CAMPAIGN"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user_defined_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"archived_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accounts_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accounts_with_impression_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_user_stopped_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"bw_lifetime_budget"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user_defined_cpm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-06-20T06:57:50.906-04:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-06-20T09:12:00.966-04:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"frequency_cap_impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"frequency_cap_duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">3600</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"billing_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"monthly_recurring"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"worthy_of_wpe"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"worthy_of_wpe_description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"wizard_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ctc_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"targeting_strategy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"geo"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"industries"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"job_titles"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"ecpc_target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.02"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"max_bid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.02"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"clicks_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"impressions_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"turned_on_accounts_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"page_views_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"personalization_c_page_views_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"conversion_c_page_views_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"conversion_rate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"salesforce_lists"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"organization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"campaigns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"job_titles"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"personalization_criteria"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"conversion_criteria"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"inventories"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"geo_optimizations"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"day_partings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">27</span><span class="p">,</span><span class="w"> </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sunday"</span><span class="p">,</span><span class="w"> </span><span class="s2">"from_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s2">"to_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w"> </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"monday"</span><span class="p">,</span><span class="w"> </span><span class="s2">"from_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s2">"to_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w"> </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tuesday"</span><span class="p">,</span><span class="w"> </span><span class="s2">"from_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s2">"to_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wednesday"</span><span class="p">,</span><span class="w"> </span><span class="s2">"from_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s2">"to_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w"> </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"thursday"</span><span class="p">,</span><span class="w"> </span><span class="s2">"from_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s2">"to_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"friday"</span><span class="p">,</span><span class="w"> </span><span class="s2">"from_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s2">"to_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"saturday"</span><span class="p">,</span><span class="w"> </span><span class="s2">"from_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s2">"to_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"device_types"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"carriers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"targetable_accounts_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a specific campaign.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET http://abm2.listenloop.com/campaigns/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the campaign to retrieve</td>
+</tr>
+</tbody></table>
+<h1 id='accounts'>Accounts</h1><h2 id='add-list'>Add List</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://abm2.listenloop.com/campaigns/1/accounts/add_list"</span>
+  -X POST
+  -H <span class="s2">"X-User-Token: YOUR_API_KEY"</span>
+  -H <span class="s2">"X-User-Email: YOUR_EMAIL"</span>
+  -H <span class="s2">"Content-Type: application/json"</span>
+  -d <span class="s1">'{ "account_list": [ {"companyName": "Example", "domainName": "www.example.com"} ] }'</span>
+</code></pre>
+<p>This endpoint adds lits of accounts.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>POST http://abm2.listenloop.com/campaigns/&lt;ID&gt;/accounts/add_list</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the campaign containing accounts.</td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters-3'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>account_list</td>
+<td></td>
+<td>Array of accounts to add.</td>
+</tr>
+</tbody></table>
+<h3 id='campaign-attributes-3'>Campaign Attributes</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>domainName</td>
+<td></td>
+<td>Account domain</td>
+</tr>
+<tr>
+<td>companyName</td>
+<td></td>
+<td>Account name</td>
+</tr>
+<tr>
+<td>zipCode</td>
+<td></td>
+<td>Account postal code</td>
+</tr>
+<tr>
+<td>wpeText1</td>
+<td></td>
+<td>WPE custom text #1</td>
+</tr>
+<tr>
+<td>wpeText2</td>
+<td></td>
+<td>WPE custom text #2</td>
+</tr>
+<tr>
+<td>wpeText3</td>
+<td></td>
+<td>WPE custom text #3</td>
+</tr>
+<tr>
+<td>wpeText4</td>
+<td></td>
+<td>WPE custom text #4</td>
+</tr>
+<tr>
+<td>wpeText5</td>
+<td></td>
+<td>WPE custom text #5</td>
+</tr>
+</tbody></table>
+<h2 id='create-2'>Create</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://abm2.listenloop.com/campaigns/1/accounts"</span>
+  -X POST
+  -H <span class="s2">"X-User-Token: YOUR_API_KEY"</span>
+  -H <span class="s2">"X-User-Email: YOUR_EMAIL"</span>
+  -H <span class="s2">"Content-Type: application/json"</span>
+  -d <span class="s1">'{ "account": { "name": "Example", "domain": "example.com" }}'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-06-20T09:53:36.885-04:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-06-20T09:53:36.885-04:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user_defined_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"worthy_of_dsp"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"worthy_of_dsp_description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"targeting_update_needed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_user_paused_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"setup_third_party_last_ran_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"wpe_text_1"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"wpe_text_2"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"wpe_text_3"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"wpe_text_4"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"wpe_text_5"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ip_addresses_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"kick_fire_lookup_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_kick_fire_looked_up_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"logo_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"account_locations"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"account_industries"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"campaign"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"beeswax_line_item"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates account.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>POST http://abm2.listenloop.com/campaigns/&lt;ID&gt;/accounts</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the campaign containing accounts.</td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters-4'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>account</td>
+<td></td>
+<td>Contains account attributes.</td>
+</tr>
+</tbody></table>
+<h3 id='account-attributes'>Account Attributes</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td></td>
+<td>Account name.</td>
+</tr>
+<tr>
+<td>domain</td>
+<td></td>
+<td>Account domain.</td>
+</tr>
+<tr>
+<td>user_defined_status</td>
+<td></td>
+<td>Account status. Choices: &quot;active&quot;, &quot;paused&quot;, &quot;archived&quot;.</td>
+</tr>
+</tbody></table>
+<h2 id='edit'>Edit</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://abm2.listenloop.com/campaigns/1/accounts/1"</span>
+  -X PUT
+  -H <span class="s2">"X-User-Token: YOUR_API_KEY"</span>
+  -H <span class="s2">"X-User-Email: YOUR_EMAIL"</span>
+  -H <span class="s2">"Content-Type: application/json"</span>
+  -d <span class="s1">'{ "account": { "user_defined_status": "paused" }}'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-06-20T09:53:36.885-04:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-06-20T10:15:09.915-04:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user_defined_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paused"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"worthy_of_dsp"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"worthy_of_dsp_description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"targeting_update_needed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_user_paused_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"setup_third_party_last_ran_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"wpe_text_1"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"wpe_text_2"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"wpe_text_3"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"wpe_text_4"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"wpe_text_5"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ip_addresses_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"kick_fire_lookup_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_kick_fire_looked_up_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"logo_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"account_locations"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"account_industries"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"campaign"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"beeswax_line_item"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint edits account.</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>PUT http://abm2.listenloop.com/campaigns/&lt;CID&gt;/accounts/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-5'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>CID</td>
+<td>The ID of the campaign containing accounts.</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>The ID of the account.</td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters-5'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>account</td>
+<td></td>
+<td>Contains account attributes.</td>
+</tr>
+</tbody></table>
+<h3 id='account-attributes-2'>Account Attributes</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td></td>
+<td>Account name</td>
+</tr>
+<tr>
+<td>domain</td>
+<td></td>
+<td>Account domain</td>
+</tr>
+<tr>
+<td>user_defined_status</td>
+<td></td>
+<td>Account status. Choices: &quot;active&quot;, &quot;paused&quot;, &quot;archived&quot;.</td>
+</tr>
+</tbody></table>
+<h2 id='show'>Show</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://abm2.listenloop.com/campaigns/1/accounts/1"</span>
+  -H <span class="s2">"X-User-Token: YOUR_API_KEY"</span>
+  -H <span class="s2">"X-User-Email: YOUR_EMAIL"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-06-20T09:53:36.885-04:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-06-20T10:15:09.915-04:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user_defined_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paused"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"worthy_of_dsp"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"worthy_of_dsp_description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"targeting_update_needed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_user_paused_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"setup_third_party_last_ran_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"wpe_text_1"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"wpe_text_2"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"wpe_text_3"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"wpe_text_4"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"wpe_text_5"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ip_addresses_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"kick_fire_lookup_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_kick_fire_looked_up_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"logo_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"account_locations"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"account_industries"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"campaign"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"beeswax_line_item"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a specific account.</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET http://abm2.listenloop.com/campaigns/&lt;CID&gt;/accounts/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-6'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>CID</td>
+<td>The ID of the campaign containing accounts.</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>The ID of the account.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>
