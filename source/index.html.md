@@ -241,10 +241,10 @@ curl "http://v2.listenloop.com/campaigns/1"
   "worthy_of_wpe_description": null,
   "wizard_type": null,
   "ctc_enabled": false,
-  "targeting_strategy": { 
-    "geo": true, 
-    "industries": true, 
-    "job_titles": true 
+  "targeting_strategy": {
+    "geo": true,
+    "industries": true,
+    "job_titles": true
   },
   "ecpc_target": "0.02",
   "max_bid": "0.02",
@@ -299,7 +299,6 @@ This endpoint edits a specific campaign.
 | --------- | ------- | ----------------------------- |
 | campaign  |         | Contains campaign attributes. |
 
-
 ### Campaign Attributes
 
 | Parameter                   | Default | Description                                                                                                         |
@@ -324,54 +323,92 @@ This endpoint edits a specific campaign.
 
 ## Show Campaign
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
 ```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require("kittn");
-
-let api = kittn.authorize("meowmeowmeow");
-let max = api.kittens.get(2);
+curl "http://v2.listenloop.com/campaigns/1"
+  -H "X-User-Token: YOUR_API_KEY"
+  -H "X-User-Email: YOUR_EMAIL"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "organization_id": 1,
+  "id": 1,
+  "destination_url": "http://listenloop.com",
+  "worthy_of_dsp": true,
+  "user_defined_aggressiveness": null,
+  "end_date": null,
+  "start_date": null,
+  "daily_budget": "15.0",
+  "pacing": "daily",
+  "bidding_strategy": "CPM",
+  "worthy_of_dsp_description": "",
+  "name": "API_CAMPAIGN",
+  "user_defined_status": "active",
+  "archived_at": null,
+  "accounts_count": null,
+  "accounts_with_impression_count": null,
+  "last_user_stopped_at": null,
+  "bw_lifetime_budget": "10000.0",
+  "user_defined_cpm": "25.0",
+  "created_at": "2018-06-20T06:57:50.906-04:00",
+  "updated_at": "2018-06-20T09:12:00.966-04:00",
+  "frequency_cap_impressions": 20,
+  "frequency_cap_duration": 3600,
+  "billing_type": "monthly_recurring",
+  "worthy_of_wpe": false,
+  "worthy_of_wpe_description": null,
+  "wizard_type": null,
+  "ctc_enabled": false,
+  "targeting_strategy": {
+    "geo": true,
+    "industries": true,
+    "job_titles": true
+  },
+  "ecpc_target": "0.02",
+  "max_bid": "0.02",
+  "clicks_count": null,
+  "impressions_count": null,
+  "turned_on_accounts_count": 0,
+  "ctr": null,
+  "page_views_count": null,
+  "personalization_c_page_views_count": null,
+  "conversion_c_page_views_count": null,
+  "conversion_rate": null,
+  "salesforce_lists": [],
+  "organization": {
+    "id": 1,
+    "campaigns": [1]
+  },
+  "job_titles": [],
+  "personalization_criteria": [],
+  "conversion_criteria": [],
+  "inventories": [],
+  "geo_optimizations": [],
+  "day_partings": [
+    { "id": 27, "day": "sunday", "from_hour": 4, "to_hour": 20 },
+    { "id": 28, "day": "monday", "from_hour": 4, "to_hour": 20 },
+    { "id": 29, "day": "tuesday", "from_hour": 4, "to_hour": 20 },
+    { "id": 30, "day": "wednesday", "from_hour": 4, "to_hour": 20 },
+    { "id": 31, "day": "thursday", "from_hour": 4, "to_hour": 20 },
+    { "id": 32, "day": "friday", "from_hour": 4, "to_hour": 20 },
+    { "id": 33, "day": "saturday", "from_hour": 4, "to_hour": 20 }
+  ],
+  "device_types": [],
+  "carriers": [],
+  "targetable_accounts_count": 0
 }
 ```
 
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+This endpoint retrieves a specific campaign.
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET http://v2.listenloop.com/campaigns/<ID>`
 
 ### URL Parameters
 
-| Parameter | Description                      |
-| --------- | -------------------------------- |
-| ID        | The ID of the kitten to retrieve |
+| Parameter | Description                        |
+| --------- | ---------------------------------- |
+| ID        | The ID of the campaign to retrieve |
