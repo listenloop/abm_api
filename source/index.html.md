@@ -412,3 +412,245 @@ This endpoint retrieves a specific campaign.
 | Parameter | Description                        |
 | --------- | ---------------------------------- |
 | ID        | The ID of the campaign to retrieve |
+
+# Accounts
+
+## Add List
+
+```shell
+curl "http://v2.listenloop.com/campaigns/1/accounts/add_list"
+  -X POST
+  -H "X-User-Token: YOUR_API_KEY"
+  -H "X-User-Email: YOUR_EMAIL"
+  -H "Content-Type: application/json"
+  -d '{ "account_list": [ {"companyName": "Example", "domainName": "www.example.com"} ] }'
+```
+
+This endpoint adds lits of accounts.
+
+### HTTP Request
+
+`POST http://v2.listenloop.com/campaigns/<ID>/accounts/add_list`
+
+### URL Parameters
+
+| Parameter | Description                                 |
+| --------- | ------------------------------------------- |
+| ID        | The ID of the campaign containing accounts. |
+
+### Query Parameters
+
+| Parameter    | Default | Description               |
+| ------------ | ------- | ------------------------- |
+| account_list |         | Array of accounts to add. |
+
+### Campaign Attributes
+
+| Parameter   | Default | Description         |
+| ----------- | ------- | ------------------- |
+| domainName  |         | Account domain      |
+| companyName |         | Account name        |
+| zipCode     |         | Account postal code |
+| wpeText1    |         | WPE custom text #1  |
+| wpeText2    |         | WPE custom text #2  |
+| wpeText3    |         | WPE custom text #3  |
+| wpeText4    |         | WPE custom text #4  |
+| wpeText5    |         | WPE custom text #5  |
+
+## Create
+
+```shell
+curl "http://v2.listenloop.com/campaigns/1/accounts"
+  -X POST
+  -H "X-User-Token: YOUR_API_KEY"
+  -H "X-User-Email: YOUR_EMAIL"
+  -H "Content-Type: application/json"
+  -d '{ "account": { "name": "Example", "domain": "example.com" }}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": 1,
+  "account_id": 1,
+  "name": "Example",
+  "domain": "example.com",
+  "source": "user",
+  "created_at": "2018-06-20T09:53:36.885-04:00",
+  "updated_at": "2018-06-20T09:53:36.885-04:00",
+  "user_defined_status": "active",
+  "worthy_of_dsp": false,
+  "worthy_of_dsp_description": null,
+  "targeting_update_needed": false,
+  "last_user_paused_at": null,
+  "setup_third_party_last_ran_at": null,
+  "campaign_id": 1,
+  "wpe_text_1": null,
+  "wpe_text_2": null,
+  "wpe_text_3": null,
+  "wpe_text_4": null,
+  "wpe_text_5": null,
+  "ip_addresses_count": 0,
+  "kick_fire_lookup_status": "pending",
+  "last_kick_fire_looked_up_at": null,
+  "logo_url": null,
+  "account_locations": [],
+  "account_industries": [],
+  "campaign": { "id": 1 },
+  "beeswax_line_item": null
+}
+```
+
+This endpoint creates account.
+
+### HTTP Request
+
+`POST http://v2.listenloop.com/campaigns/<ID>/accounts`
+
+### URL Parameters
+
+| Parameter | Description                                 |
+| --------- | ------------------------------------------- |
+| ID        | The ID of the campaign containing accounts. |
+
+### Query Parameters
+
+| Parameter | Default | Description                  |
+| --------- | ------- | ---------------------------- |
+| account   |         | Contains account attributes. |
+
+### Account Attributes
+
+| Parameter           | Default | Description                                              |
+| ------------------- | ------- | -------------------------------------------------------- |
+| name                |         | Account name.                                            |
+| domain              |         | Account domain.                                          |
+| user_defined_status |         | Account status. Choices: "active", "paused", "archived". |
+
+## Edit
+
+```shell
+curl "http://v2.listenloop.com/campaigns/1/accounts/1"
+  -X PUT
+  -H "X-User-Token: YOUR_API_KEY"
+  -H "X-User-Email: YOUR_EMAIL"
+  -H "Content-Type: application/json"
+  -d '{ "account": { "user_defined_status": "paused" }}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": 1,
+  "account_id": 1,
+  "name": "Example",
+  "domain": "example.com",
+  "source": "user",
+  "created_at": "2018-06-20T09:53:36.885-04:00",
+  "updated_at": "2018-06-20T10:15:09.915-04:00",
+  "campaign_id": 1,
+  "user_defined_status": "paused",
+  "worthy_of_dsp": false,
+  "worthy_of_dsp_description": null,
+  "targeting_update_needed": false,
+  "last_user_paused_at": null,
+  "setup_third_party_last_ran_at": null,
+  "wpe_text_1": null,
+  "wpe_text_2": null,
+  "wpe_text_3": null,
+  "wpe_text_4": null,
+  "wpe_text_5": null,
+  "ip_addresses_count": 0,
+  "kick_fire_lookup_status": "pending",
+  "last_kick_fire_looked_up_at": null,
+  "logo_url": null,
+  "account_locations": [],
+  "account_industries": [],
+  "campaign": { "id": 1 },
+  "beeswax_line_item": null
+}
+```
+
+This endpoint edits account.
+
+### HTTP Request
+
+`PUT http://v2.listenloop.com/campaigns/<CID>/accounts/<ID>`
+
+### URL Parameters
+
+| Parameter | Description                                 |
+| --------- | ------------------------------------------- |
+| CID       | The ID of the campaign containing accounts. |
+| ID        | The ID of the account.                      |
+
+### Query Parameters
+
+| Parameter | Default | Description                  |
+| --------- | ------- | ---------------------------- |
+| account   |         | Contains account attributes. |
+
+### Account Attributes
+
+| Parameter           | Default | Description                                              |
+| ------------------- | ------- | -------------------------------------------------------- |
+| name                |         | Account name                                             |
+| domain              |         | Account domain                                           |
+| user_defined_status |         | Account status. Choices: "active", "paused", "archived". |
+
+## Show
+
+```shell
+curl "http://v2.listenloop.com/campaigns/1/accounts/1"
+  -H "X-User-Token: YOUR_API_KEY"
+  -H "X-User-Email: YOUR_EMAIL"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": 1,
+  "account_id": 1,
+  "name": "Example",
+  "domain": "example.com",
+  "source": "user",
+  "created_at": "2018-06-20T09:53:36.885-04:00",
+  "updated_at": "2018-06-20T10:15:09.915-04:00",
+  "user_defined_status": "paused",
+  "worthy_of_dsp": false,
+  "worthy_of_dsp_description": null,
+  "targeting_update_needed": false,
+  "last_user_paused_at": null,
+  "setup_third_party_last_ran_at": null,
+  "campaign_id": 1,
+  "wpe_text_1": null,
+  "wpe_text_2": null,
+  "wpe_text_3": null,
+  "wpe_text_4": null,
+  "wpe_text_5": null,
+  "ip_addresses_count": 0,
+  "kick_fire_lookup_status": "pending",
+  "last_kick_fire_looked_up_at": null,
+  "logo_url": null,
+  "account_locations": [],
+  "account_industries": [],
+  "campaign": { "id": 1 },
+  "beeswax_line_item": null
+}
+```
+
+This endpoint retrieves a specific account.
+
+### HTTP Request
+
+`GET http://v2.listenloop.com/campaigns/<CID>/accounts/<ID>`
+
+### URL Parameters
+
+| Parameter | Description                                 |
+| --------- | ------------------------------------------- |
+| CID       | The ID of the campaign containing accounts. |
+| ID        | The ID of the account.                      |
