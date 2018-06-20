@@ -14,50 +14,35 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+Welcome to the ListenLoop API! You can use our API to access ListenLoop API endpoints.
 
 # Authentication
 
 > To authorize, use this code:
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
 
 ```shell
 # With shell, you can just pass the correct header with each request
 curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+  -H "X-User-Token: YOUR_API_KEY"
+  -H "X-User-Email: YOUR_EMAIL"
 ```
 
-```javascript
-const kittn = require("kittn");
+> Make sure to replace `YOUR_API_KEY` and `YOUR_EMAIL` with your API key & email accordingly.
 
-let api = kittn.authorize("meowmeowmeow");
-```
+ListenLoop uses API keys to allow access to the API. You can get your API key at your [organization page](http://v2.listenloop.com/#/organization).
 
-> Make sure to replace `meowmeowmeow` with your API key.
+ListenLoop expects for the API key and email to be included in all API requests to the server in a header that looks like the following:
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+`X-User-Token: YOUR_API_KEY`
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
+`X-User-Email: YOUR_EMAIL`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>YOUR_API_KEY</code> with your personal API key.
+</aside>
+<aside class="notice">
+You must replace <code>YOUR_EMAIL</code> with your email.
 </aside>
 
 # Campaigns
