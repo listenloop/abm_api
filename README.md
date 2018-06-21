@@ -46,7 +46,7 @@ If you'd prefer to use Docker, instructions are available [in the wiki](https://
 
 ### Deploy
 
-Use `deploy.sh` script. Make sure that you have configured & working `awscli` [util](https://aws.amazon.com/ru/cli/). 
+Use `deploy.sh` script. Make sure that you have configured & working `awscli` [util](https://aws.amazon.com/cli/). 
 
 ```shell
 ./deploy.sh
