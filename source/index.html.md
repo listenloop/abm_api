@@ -21,9 +21,9 @@ curl "api_endpoint_here"
 
 > Make sure to replace `YOUR_API_KEY` and `YOUR_EMAIL` with your API key & email accordingly.
 
-ListenLoop uses API keys to allow access to the API. You can get your API key at your [organization page](http://v2.listenloop.com/#/organization).
+ListenLoop uses API keys to allow access to the API. You can get your API key from your [organization page](http://v2.listenloop.com/#/organization).
 
-ListenLoop expects for the API key and email to be included in all API requests to the server in a header that looks like the following:
+ListenLoop expects API key and email to be included in all API requests to the server in a header that looks like the following:
 
 `X-User-Token: YOUR_API_KEY`
 
@@ -46,7 +46,7 @@ curl "http://abm2.listenloop.com/users/sign_in"
   -H "Accept: application/json"
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns a JSON structure like this:
 
 ```json
 {
@@ -153,7 +153,7 @@ curl "http://abm2.listenloop.com/campaigns"
   -d '{ "campaign": { "name": "My Awesome Campaign"}}'
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns a JSON structure like this:
 
 ```json
 {
@@ -260,7 +260,7 @@ curl "http://abm2.listenloop.com/campaigns"
 }
 ```
 
-This endpoint creates campaign.
+This endpoint creates a campaign.
 
 ### HTTP Request
 
@@ -305,7 +305,7 @@ curl "http://abm2.listenloop.com/campaigns/1"
   -d '{ "campaign": { "destination_url": "listenloop.com"}}'
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns a JSON structure like this:
 
 ```json
 {
@@ -425,7 +425,7 @@ curl "http://abm2.listenloop.com/campaigns/1"
   -H "X-User-Email: YOUR_EMAIL"
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns a JSON structure like this:
 
 ```json
 {
@@ -522,7 +522,7 @@ curl "http://abm2.listenloop.com/campaigns/1/accounts/add_list"
   -d '{ "account_list": [ {"companyName": "Example", "domainName": "www.example.com"} ] }'
 ```
 
-This endpoint adds lits of accounts.
+This endpoint adds a list of accounts to a campaign.
 
 ### HTTP Request
 
@@ -564,7 +564,7 @@ curl "http://abm2.listenloop.com/campaigns/1/accounts"
   -d '{ "account": { "name": "Example", "domain": "example.com" }}'
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns a JSON structure like this:
 
 ```json
 {
@@ -598,7 +598,7 @@ curl "http://abm2.listenloop.com/campaigns/1/accounts"
 }
 ```
 
-This endpoint creates account.
+This endpoint creates an account.
 
 ### HTTP Request
 
@@ -635,7 +635,7 @@ curl "http://abm2.listenloop.com/campaigns/1/accounts/1"
   -d '{ "account": { "user_defined_status": "paused" }}'
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns a JSON structure like this:
 
 ```json
 {
@@ -669,7 +669,7 @@ curl "http://abm2.listenloop.com/campaigns/1/accounts/1"
 }
 ```
 
-This endpoint edits account.
+This endpoint edits an account.
 
 ### HTTP Request
 
@@ -704,7 +704,7 @@ curl "http://abm2.listenloop.com/campaigns/1/accounts/1"
   -H "X-User-Email: YOUR_EMAIL"
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns a JSON structure like this:
 
 ```json
 {
