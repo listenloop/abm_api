@@ -2,6 +2,10 @@
 title: API Reference
 
 search: true
+
+language_tabs:
+  - shell
+  - javascript
 ---
 
 # Introduction
@@ -750,3 +754,32 @@ This endpoint retrieves a specific account.
 | --------- | ------------------------------------------- |
 | CID       | The ID of the campaign containing accounts. |
 | ID        | The ID of the account.                      |
+
+# Conversions
+
+## Create
+
+```javascript
+window.ll_conversion("my awesome conversion");
+```
+
+If you use our loop.js script you can create conversion from Javascript. Conversions will be created for campaign, when they match for an account belonging to the campaign.
+### Function parameter
+
+| Parameter | Description     |
+| --------- | --------------- |
+| Name      | Conversion name |
+
+## Fire
+
+```javascript
+window.ll_conversion("my awesome conversion");
+```
+
+If you use our loop.js script you can fire conversion from Javascript. If conversion criteria with such name doesn't exist in your campaign it will be created.
+
+### Function parameter
+
+| Parameter | Description     |
+| --------- | --------------- |
+| Name      | Conversion name |
