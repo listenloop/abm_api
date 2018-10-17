@@ -787,6 +787,8 @@ If you use our loop.js script you can fire conversion from Javascript. If conver
 
 # Job Titles
 
+Example of job title names: "CMO", "VP of Marketing", "Dir. of Marketing", "Marketing Manager". You can check full list of up-to-date available job titles [here](http://v2.listenloop.com/#/wizard/select_job_functions_to_target).
+
 ## Index
 
 ```shell
@@ -895,3 +897,6 @@ This endpoint deletes job title.
 | --------- | --------------------------------------------- |
 | CID       | The ID of the campaign containing job titles. |
 | ID        | The ID of the job title.                      |
+
+
+
