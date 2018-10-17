@@ -764,6 +764,7 @@ window.ll_conversion("my awesome conversion");
 ```
 
 If you use our loop.js script you can create conversion from Javascript. Conversions will be created for campaign, when they match for an account belonging to the campaign.
+
 ### Function parameter
 
 | Parameter | Description     |
@@ -783,3 +784,114 @@ If you use our loop.js script you can fire conversion from Javascript. If conver
 | Parameter | Description     |
 | --------- | --------------- |
 | Name      | Conversion name |
+
+# Job Titles
+
+## Index
+
+```shell
+curl "http://abm2.listenloop.com/campaigns/1/job_titles"
+  -X GET
+  -H "X-User-Token: YOUR_API_KEY"
+  -H "X-User-Email: YOUR_EMAIL"
+  -H "Content-Type: application/json"
+```
+
+> The above command returns a JSON structure like this:
+
+```json
+[
+  {
+    "id": 1,
+    "name": "CIO",
+    "campaign_id": 1,
+    "created_at": "2018-04-12T18:04:59.430-04:00",
+    "updated_at": "2018-04-12T18:04:59.430-04:00",
+    "campaign": {
+      "id": 1,
+      "job_titles": [1]
+    }
+  }
+]
+```
+
+This endpoint returns job titles belonging to the campaign.
+
+### HTTP Request
+
+`GET http://abm2.listenloop.com/campaigns/<ID>/job_titles`
+
+### URL Parameters
+
+| Parameter | Description                                   |
+| --------- | --------------------------------------------- |
+| ID        | The ID of the campaign containing job titles. |
+
+## Create Bulk
+
+```shell
+curl "http://abm2.listenloop.com/campaigns/1/job_titles/create_bulk
+  -X POST
+  -H "X-User-Token: YOUR_API_KEY"
+  -H "X-User-Email: YOUR_EMAIL"
+  -H "Content-Type: application/json"
+  -d '{ "job_titles_list": ["CIO"]}'
+```
+
+> Note that result contains only previously existing job titles:
+
+```json
+[
+  {
+    "id": 1,
+    "name": "CRO",
+    "campaign_id": 1,
+    "created_at": "2018-09-05T09:55:27.506-04:00",
+    "updated_at": "2018-09-05T09:55:27.506-04:00",
+    "campaign": {
+      "id": 1,
+      "job_titles": [1]
+    }
+  }
+]
+```
+
+This endpoint creates list of job titles.
+
+### HTTP Request
+
+`POST http://abm2.listenloop.com/campaigns/<ID>/job_titles/create_bulk`
+
+### URL Parameters
+
+| Parameter | Description                                   |
+| --------- | --------------------------------------------- |
+| ID        | The ID of the campaign containing job titles. |
+
+### Query Parameters
+
+| Parameter       | Default | Description                         |
+| --------------- | ------- | ----------------------------------- |
+| job_titles_list |         | Array of job titles names to insert |
+
+## Destroy
+
+```shell
+curl "http://abm2.listenloop.com/campaigns/1/job_titles/1"
+  -X DELETE
+  -H "X-User-Token: YOUR_API_KEY"
+  -H "X-User-Email: YOUR_EMAIL"
+```
+
+This endpoint deletes job title.
+
+### HTTP Request
+
+`DELETE http://abm2.listenloop.com/campaigns/<CID>/job_titles/<ID>`
+
+### URL Parameters
+
+| Parameter | Description                                   |
+| --------- | --------------------------------------------- |
+| CID       | The ID of the campaign containing job titles. |
+| ID        | The ID of the job title.                      |
