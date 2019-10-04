@@ -10,7 +10,7 @@ language_tabs:
 
 # Introduction
 
-Welcome to the ListenLoop API! You can use our API to access ListenLoop API endpoints.
+Welcome to the Integrate ABM Display Advertising API! You can use our API to access Integrate ABM API endpoints.
 
 # Authentication
 
@@ -25,9 +25,9 @@ curl "api_endpoint_here"
 
 > Make sure to replace `YOUR_API_KEY` and `YOUR_EMAIL` with your API key & email accordingly.
 
-ListenLoop uses API keys to allow access to the API. You can get your API key from your [organization page](http://v2.listenloop.com/#/organization).
+Integrate uses API keys to allow access to the API. You can get your API key from your [organization page](http://v2.listenloop.com/#/organization).
 
-ListenLoop expects API key and email to be included in all API requests to the server in a header that looks like the following:
+Integrate expects API key and email to be included in all API requests to the server in a header that looks like the following:
 
 `X-User-Token: YOUR_API_KEY`
 
